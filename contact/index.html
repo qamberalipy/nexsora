@@ -3,13 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get a Quote &amp; Contact NEXSORA</title>
-  <meta name="description" content="Request a quote or schedule a consultation with NEXSORA for web development, AI automation, CRM, or Linux hosting.">
+  <title>Get a Quote, Book an AI/CRM Audit or Order Hosting | NEXSORA</title>
+  <meta name="description" content="Contact NEXSORA to request a custom WordPress or Shopify website quote, book an AI automation &amp; CRM consultation (HubSpot, Zoho, Salesforce, Dynamics 365), or activate a Linux hosting plan.">
   <link rel="canonical" href="https://nexsorasolution.com/contact">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Get a Quote, Book an AI/CRM Audit or Order Hosting | NEXSORA">
+  <meta property="og:description" content="Contact NEXSORA to request a custom WordPress or Shopify website quote, book an AI automation &amp; CRM consultation, or activate a Linux hosting plan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexsorasolution.com/contact">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get a Quote, Book an AI/CRM Audit or Order Hosting | NEXSORA">
+  <meta name="twitter:description" content="Contact NEXSORA to request a custom WordPress or Shopify website quote, book an AI automation &amp; CRM consultation, or activate a Linux hosting plan.">
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Structured Data (ContactPage + Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://nexsorasolution.com/contact#page",
+        "name": "Get a Quote, Book an AI/CRM Audit or Order Hosting | NEXSORA",
+        "url": "https://nexsorasolution.com/contact",
+        "description": "Request a web development quote, schedule an AI & CRM consultation, or order managed Linux hosting from NEXSORA."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://nexsorasolution.com/#organization",
+        "name": "NEXSORA",
+        "url": "https://nexsorasolution.com",
+        "email": "hello@nexsorasolution.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "hello@nexsorasolution.com",
+            "areaServed": ["PK", "Global"],
+            "availableLanguage": ["English", "Urdu"]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "technical support",
+            "email": "hello@nexsorasolution.com",
+            "areaServed": ["PK", "Global"]
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="ambient-mesh" aria-hidden="true"></div>
@@ -88,22 +139,187 @@
   </header>
 
   <main class="site-main">
-    <section class="bento-grid" aria-label="Contact Page Shell">
-      <div class="glass-card starter-card lg-span-8">
-        <span class="route-badge">Route: /contact</span>
-        <h1 class="starter-title">Get a Quote &amp; Contact NEXSORA</h1>
-        <p class="starter-desc">
-          Layout shell initialized. This Bento Grid container and Glassmorphism surface are ready for the interactive quote form and Cloudflare Pages Function endpoint in upcoming iterations.
-        </p>
-      </div>
-      <div class="glass-card-dark starter-meta-card lg-span-4">
+    <!-- Section 1: Compact Contact Hero Bento -->
+    <section class="bento-grid" aria-label="Contact Overview">
+      <div class="glass-card hero-card col-span-12">
         <div>
-          <span class="starter-meta-label">Iteration 1 Status</span>
-          <h2 class="starter-meta-title">Clean Route Verified</h2>
+          <span class="eyebrow-badge">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            START YOUR PROJECT &bull; ORDER HOSTING &bull; FREE ARCHITECTURE CALL
+          </span>
+          <h1 class="hero-title" style="margin-top: 1.125rem;">
+            Tell Us What You Want to Build, Automate, or Host
+          </h1>
+          <p class="hero-subtitle" style="margin-top: 0.875rem;">
+            Select a service or Linux hosting plan below. Our engineering and solutions team responds within 4 business hours with a clear roadmap, timeline, or instant hosting activation details.
+          </p>
         </div>
-        <p class="starter-meta-text">
-          Shared header, footer, and root-relative assets loaded cleanly on /contact.
-        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Main Conversion Split Bento Grid -->
+    <section class="bento-section" aria-label="Project Quote and Hosting Order Form">
+      <div class="bento-grid">
+        <!-- Left Multi-Intent Interactive Form Card -->
+        <div class="glass-card starter-card lg-span-8">
+          <form id="nexsora-contact-form" class="contact-form" novalidate>
+            <!-- Row 1 -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="inquiry-name" class="form-label">Full Name *</label>
+                <input id="inquiry-name" name="name" type="text" class="form-control" placeholder="e.g., Tariq Mahmood" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-email" class="form-label">Work Email *</label>
+                <input id="inquiry-email" name="email" type="email" class="form-control" placeholder="name@company.com" autocomplete="email" required>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="inquiry-phone" class="form-label">Phone / WhatsApp Number *</label>
+                <input id="inquiry-phone" name="phone" type="tel" class="form-control" placeholder="+92 300 0000000" autocomplete="tel" required>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-company" class="form-label">Company or Desired Domain</label>
+                <input id="inquiry-company" name="company" type="text" class="form-control" placeholder="e.g., Acme Corp or yourdomain.com" autocomplete="organization">
+              </div>
+            </div>
+
+            <!-- Row 3: Primary Service / Inquiry Selector -->
+            <div class="form-group">
+              <label for="inquiry-service" class="form-label">What Can We Help You With? *</label>
+              <select id="inquiry-service" name="service" class="form-control" required>
+                <optgroup label="Web Development &amp; E-Commerce">
+                  <option value="web-development">General Web Development Inquiry</option>
+                  <option value="wordpress">WordPress / WooCommerce Development</option>
+                  <option value="shopify">Shopify E-Commerce Store</option>
+                  <option value="custom-web">Custom Web Application / Portal</option>
+                  <option value="launchpad-web">LaunchPad Starter Website Package</option>
+                  <option value="business-web">Growth Business Website Package</option>
+                  <option value="ecommerce-web">E-Commerce Commerce Pro Package</option>
+                </optgroup>
+                <optgroup label="AI Automation &amp; Enterprise CRM">
+                  <option value="ai-crm">AI Automation &amp; CRM Architecture Audit</option>
+                  <option value="ai-automation">Custom AI Chatbot (Web / WhatsApp) &amp; Workflow Automation</option>
+                  <option value="crm-consulting">CRM Platform Selection &amp; Consulting</option>
+                  <option value="hubspot-crm">HubSpot CRM Implementation &amp; Migration</option>
+                  <option value="zoho-crm">Zoho CRM / Zoho One Setup</option>
+                  <option value="salesforce-crm">Salesforce Sales/Service Cloud Architecture</option>
+                  <option value="dynamics-365">Microsoft Dynamics 365 &amp; Power Automate</option>
+                </optgroup>
+                <optgroup label="Managed Linux Web Hosting">
+                  <option value="hosting">Order Linux Web Hosting Plan</option>
+                  <option value="web-hosting-bundle">Website Build + Linux Hosting Bundle</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Row 4: Conditional Hosting Plan Selector -->
+            <div id="hosting-plan-group" class="form-group" hidden>
+              <label for="hosting-plan" class="form-label">Select Your Linux Hosting Plan *</label>
+              <select id="hosting-plan" name="plan" class="form-control">
+                <option value="Li-One">Li-One Plan — Rs. 3,600/yr (1GB Disk, 10GB BW, 25 Emails, Free SSL)</option>
+                <option value="Li-Two">Li-Two Plan — Rs. 6,600/yr (3GB Disk, 30GB BW, 50 Emails + Free .com)</option>
+                <option value="Li-Three" selected>Li-Three Plan — Rs. 10,800/yr (5GB Disk, 50GB BW, 100 Emails + Free .com — Most Popular)</option>
+                <option value="Li-Four">Li-Four Plan — Rs. 12,000/yr (10GB Disk, 100GB BW, 200 Emails + Free .com)</option>
+                <option value="Li-Five">Li-Five Plan — Rs. 15,000/yr (Unlimited Disk/BW/Emails, 20 MySQL + Free .com)</option>
+              </select>
+            </div>
+
+            <!-- Row 5: Budget / Timeline -->
+            <div class="form-group">
+              <label for="inquiry-budget" class="form-label">Estimated Budget / Timeline</label>
+              <select id="inquiry-budget" name="budget" class="form-control">
+                <option value="Hosting Plan Only (Rs. 3,600 – Rs. 15,000/yr)">Hosting Plan Only (Rs. 3,600 &ndash; Rs. 15,000/yr)</option>
+                <option value="Starter Project ($300 – $800 / PKR Equivalent)">Starter Project ($300 &ndash; $800 / PKR Equivalent)</option>
+                <option value="Growth Project ($800 – $2,500 / PKR Equivalent)">Growth Project ($800 &ndash; $2,500 / PKR Equivalent)</option>
+                <option value="Enterprise AI / CRM ($2,500+ / PKR Equivalent)">Enterprise AI / CRM ($2,500+ / PKR Equivalent)</option>
+                <option value="Need Consultation First" selected>Need Consultation First</option>
+              </select>
+            </div>
+
+            <!-- Row 6: Project Details -->
+            <div class="form-group">
+              <label for="inquiry-message" class="form-label">Project Goals, CRM Needs, or Domain Preferences *</label>
+              <textarea id="inquiry-message" name="message" class="form-control" rows="4" placeholder="Share your website goals, CRM platform, AI automation workflow, or preferred .com domain name..." required></textarea>
+            </div>
+
+            <!-- Anti-Spam Honeypot -->
+            <input type="text" name="website_url_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+
+            <!-- Submit & Status -->
+            <button type="submit" id="contact-submit-btn" class="btn-primary form-submit-btn">
+              Submit Inquiry &amp; Get Response
+            </button>
+
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Right Sidebar Bento Stack -->
+        <div class="hero-stack lg-span-4">
+          <!-- Card 1: Dynamic Selection Summary -->
+          <div id="selection-summary-card" class="glass-card summary-card" aria-live="polite">
+            <span class="case-badge">Selected Scope</span>
+            <h2 class="summary-title">General Web Development Inquiry</h2>
+            <p class="summary-desc">
+              Tailored web engineering proposal covering architecture, UI/UX, SEO, and deployment timeline.
+            </p>
+            <ul class="deliverables-list">
+              <li><span class="spec-check">&#10003;</span><span>Free 20-Min Strategy Call Included</span></li>
+              <li><span class="spec-check">&#10003;</span><span>Clear Fixed-Scope Proposal</span></li>
+              <li><span class="spec-check">&#10003;</span><span>Response Within 4 Business Hours</span></li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Direct Channels & SLA -->
+          <div class="glass-card-dark hero-dark-tile">
+            <h2 class="hero-dark-title">Direct Engineering &amp; Sales Desk</h2>
+            <div class="metric-list">
+              <div class="metric-row">
+                <svg class="metric-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <div>
+                  <span class="metric-label">Email</span>
+                  <span class="metric-value">hello@nexsorasolution.com</span>
+                </div>
+              </div>
+              <div class="metric-row">
+                <svg class="metric-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <span class="metric-label">Headquarters</span>
+                  <span class="metric-value">Karachi, Pakistan (Serving PK &amp; Global)</span>
+                </div>
+              </div>
+              <div class="metric-row">
+                <svg class="metric-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div>
+                  <span class="metric-label">Response SLA</span>
+                  <span class="metric-value">&lt; 4 Business Hours</span>
+                </div>
+              </div>
+              <div class="metric-row">
+                <svg class="metric-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <div>
+                  <span class="metric-label">Hosting Guarantee</span>
+                  <span class="metric-value">Free SSL + Softaculous + Weekly Backups</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -196,4 +412,3 @@
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
-
