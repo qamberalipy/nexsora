@@ -1933,3 +1933,124 @@ ul, ol {
 .comparison-table-2col tbody tr:last-child td {
   border-bottom: 0;
 }
+
+/* ==========================================================================
+   Work & About Pages: Portfolio Filters, Case Cards & Methodology Grid
+   ========================================================================== */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5625rem 1.125rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: rgba(0, 168, 150, 0.45);
+  color: var(--brand-charcoal);
+}
+
+.filter-pill.is-active,
+.filter-pill[aria-pressed="true"] {
+  background-color: var(--brand-teal);
+  border-color: var(--brand-teal);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px -4px rgba(0, 168, 150, 0.38);
+}
+
+.portfolio-card.is-hidden {
+  display: none;
+}
+
+.portfolio-client {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.75rem;
+}
+
+.portfolio-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.875rem;
+}
+
+.methodology-card {
+  padding: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .methodology-card {
+    padding: 2.5rem;
+  }
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .methodology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .methodology-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.methodology-step {
+  padding: 1.25rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.methodology-step-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-teal);
+}
+
+.methodology-step-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--brand-charcoal);
+}
+
+.methodology-step-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
