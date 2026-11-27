@@ -155,11 +155,46 @@
     });
   }
 
+  function initFaqAccordion() {
+    const triggers = document.querySelectorAll('[data-faq-trigger]');
+    if (!triggers.length) return;
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('[data-faq-item]');
+        const panel = item ? item.querySelector('[data-faq-panel]') : null;
+        if (!item || !panel) return;
+
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Close sibling items in the same accordion container
+        const list = item.closest('[data-faq-list]');
+        if (list) {
+          list.querySelectorAll('[data-faq-item]').forEach((other) => {
+            if (other !== item) {
+              other.classList.remove('is-open');
+              const otherTrigger = other.querySelector('[data-faq-trigger]');
+              const otherPanel = other.querySelector('[data-faq-panel]');
+              if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+              if (otherPanel) otherPanel.setAttribute('aria-hidden', 'true');
+            }
+          });
+        }
+
+        const nextState = !isOpen;
+        item.classList.toggle('is-open', nextState);
+        trigger.setAttribute('aria-expanded', String(nextState));
+        panel.setAttribute('aria-hidden', String(!nextState));
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initActiveRoute();
     initServicesDropdown();
     initMobileDrawer();
     initSmoothScroll();
+    initFaqAccordion();
   });
 })();
 
