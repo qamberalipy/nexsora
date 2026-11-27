@@ -533,7 +533,60 @@
     });
   }
 
+  function initLiquidAurora() {
+    if (document.querySelector('.liquid-aurora')) return;
+    const aurora = document.createElement('div');
+    aurora.className = 'liquid-aurora';
+    aurora.setAttribute('aria-hidden', 'true');
+    aurora.innerHTML = `
+      <span class="aurora-orb aurora-orb-1"></span>
+      <span class="aurora-orb aurora-orb-2"></span>
+      <span class="aurora-orb aurora-orb-3"></span>
+      <span class="aurora-orb aurora-orb-4"></span>
+      <span class="aurora-grid"></span>
+    `;
+    document.body.prepend(aurora);
+  }
+
+  function initSmoothReveal() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const grids = document.querySelectorAll('.bento-grid');
+    if (!grids.length) return;
+
+    const targets = [];
+    grids.forEach((grid) => {
+      const items = grid.querySelectorAll('.glass-card, .glass-card-dark, .section-header');
+      items.forEach((el, index) => {
+        if (el.closest('header') || el.closest('.ai-widget-root')) return;
+        const delayMs = (index % 4) * 60;
+        el.classList.add('reveal-item');
+        el.style.transitionDelay = `${delayMs}ms`;
+        targets.push(el);
+      });
+    });
+
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    initLiquidAurora();
     initActiveRoute();
     initServicesDropdown();
     initMobileDrawer();
@@ -542,6 +595,7 @@
     initPortfolioFilter();
     initContactForm();
     initNexsoraAiWidget();
+    initSmoothReveal();
   });
 })();
 
