@@ -189,12 +189,53 @@
     });
   }
 
+  function initPortfolioFilter() {
+    const buttons = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('[data-categories]');
+    if (!buttons.length || !cards.length) return;
+
+    const applyFilter = (filterValue) => {
+      const normalized = (filterValue || 'all').toLowerCase();
+
+      buttons.forEach((btn) => {
+        const isMatch = (btn.getAttribute('data-filter') || '').toLowerCase() === normalized;
+        btn.classList.toggle('is-active', isMatch);
+        btn.setAttribute('aria-pressed', String(isMatch));
+      });
+
+      cards.forEach((card) => {
+        const categories = (card.getAttribute('data-categories') || '').toLowerCase().split(/\s+/);
+        const show = normalized === 'all' || categories.includes(normalized);
+        card.classList.toggle('is-hidden', !show);
+      });
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        applyFilter(btn.getAttribute('data-filter'));
+      });
+    });
+
+    // Optional URL query parameter pre-filtering (e.g., /work?category=crm)
+    const params = new URLSearchParams(window.location.search);
+    const initialCategory = params.get('category');
+    if (initialCategory) {
+      const hasMatchingBtn = Array.from(buttons).some(
+        (btn) => (btn.getAttribute('data-filter') || '').toLowerCase() === initialCategory.toLowerCase()
+      );
+      if (hasMatchingBtn) {
+        applyFilter(initialCategory);
+      }
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initActiveRoute();
     initServicesDropdown();
     initMobileDrawer();
     initSmoothScroll();
     initFaqAccordion();
+    initPortfolioFilter();
   });
 })();
 
